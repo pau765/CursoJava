@@ -1,0 +1,25 @@
+ public static void main(String[] args) {
+       Scanner sc = new Scanner (System.in);
+        System.out.print("Introduce un numero maximo: ");
+        int numFin = sc.nextInt();
+        System.out.print("Introduce la longitud que quieras que tenga: ");
+        int longitud = sc.nextInt();
+        //rellenaPares(10, numFin);
+        //System.out.println(Arrays.toString(rellenaPares(longitud, numFin)));
+    }
+    
+    
+    static int[] rellenaPares(int longitud, int fin){
+    int pares[]= new int [longitud];
+    int i = 0;
+    while (i <  pares.length) {
+        int numero = (int) (Math.random() * fin + 1);
+        if (numero % 2 == 0) {
+            pares[i] = numero;
+            i++;
+        }
+    }
+    Arrays.sort(pares);
+    System.out.println(Arrays.toString(pares));
+    return (pares);
+    }
