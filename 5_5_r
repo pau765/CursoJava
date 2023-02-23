@@ -5,7 +5,7 @@
         System.out.print("Introduce la longitud que quieras que tenga: ");
         int longitud = sc.nextInt();
         //rellenaPares(10, numFin);
-        //System.out.println(Arrays.toString(rellenaPares(longitud, numFin)));
+        System.out.println(Arrays.toString(rellenaPares(longitud, numFin)));
     }
     
     
