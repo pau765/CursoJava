@@ -7,4 +7,4 @@ int numvalores[] = new int [10];
             suma += valor;
         }
         System.out.println("La suma de los valores aleatorios es " + suma);
-  
+          System.out.println("La suma de los valores aleatorios es " + suma);
