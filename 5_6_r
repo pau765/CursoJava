@@ -1,0 +1,55 @@
+ public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Introduce tus 6 numeros: ");
+        int num [] = new int [6];
+        int numWinners[] = {18, 25, 12, 4, 22, 7};
+        Arrays.sort(numWinners);
+        for (int i = 0; i < num.length; i++) {// (int i= 0; i<6;i++);
+        num [i]=sc.nextInt();
+        }
+        System.out.println("Tu numero de aciertos es: " + loteria(num, numWinners));
+       // loteria(num, numWinners);
+    }
+        
+
+    static int loteria(int apuesta[], int[] combiGanadora) {
+        int aciertos = 0;
+        for (int a : apuesta) {
+            if (Arrays.binarySearch(combiGanadora, a) >= 0) {
+                aciertos++;
+            }
+            }
+        return (aciertos);
+    }
+    
+    Ampliacion 2 5.6
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Introduce tus 6 numeros: ");
+        int num [] = new int [6];
+        int numWinners[] = new int [6];
+        for (int i = 0; i < numWinners.length; i++ ) {
+            numWinners [i] = (int) (Math.random()*48+1);
+        }
+        Arrays.sort(numWinners);
+        
+        for (int i = 0; i < num.length; i++) {// (int i= 0; i<6;i++);
+        num [i]=sc.nextInt();
+        }
+        System.out.println("Tu numero de aciertos es: " + loteria(num, numWinners));
+       // loteria(num, numWinners);
+       System.out.println(Arrays.toString(numWinners));
+    }
+        
+
+    static int loteria(int apuesta[], int[] combiGanadora) {
+        int aciertos = 0;
+        for (int a : apuesta) {
+            if (Arrays.binarySearch(combiGanadora, a) >= 0) {
+                aciertos++;
+            }
+            }
+        return (aciertos);
+    }
+    
+    
