@@ -1,0 +1,42 @@
+ public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //System.out.println("Solucion a");
+        String password, palabraSecreta;
+        System.out.print("Jugador X. Introduzca la contraseña secreta: ");
+        password = sc.next();
+        System.out.println("La contraseña tiene " + password.length() + " caracteres");
+        System.out.print("Jugador Y. Palabra: ");
+        palabraSecreta = sc.next();
+        /*do {
+            System.out.print("Jugador Y. Palabra: ");
+            palabraSecreta = sc.nextLine();
+            int comparacion = password.compareTo(palabraSecreta);
+            if (comparacion == 0) {
+                System.out.print("CORRECTO");
+            } else if (comparacion < 0) {
+                System.out.print("La contraseña es menos que: " + palabraSecreta);
+            } else {
+                System.out.print("La contraseña es mayor que: " + palabraSecreta);
+            }
+        } while (!password.equals(palabraSecreta)); */
+        // System.out.print("Solucion b");
+        
+        //if (password.length() > palabraSecreta.length()) {
+
+        //}
+        while (!palabraSecreta.equals(password)) {
+            int longitud = password.length() > palabraSecreta.length() ? palabraSecreta.length(): password.length() ;
+            String pista = "";
+            for (int i = 0; i < longitud; i++) {
+                if (password.charAt(i) == palabraSecreta.charAt(i)) {
+                    pista += password.charAt(i);
+                } else {
+                    pista += '*';
+                }
+            }
+            System.out.println(pista);
+            System.out.println("Jugador Y. Introduzca otra palabra: ");
+            palabraSecreta = new Scanner(System.in).next();
+        }
+        System.out.println("CORRECTO");
+    }
