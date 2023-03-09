@@ -1,0 +1,27 @@
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        final char CONJUNTO1[] = {'e', 'i', 'k', 'm', 'p', 'q', 'r', 's', 't', 'u', 'v'};
+        final char CONJUNTO2[] = {'p', 'v', 'i', 'u', 'm', 't', 'e', 'r', 'k', 'q', 's'};
+        char code[];
+        String texto;
+        System.out.println("Introduce un texto para codificar: ");
+        texto = sc.nextLine().toLowerCase();
+        code = new char[texto.length()];
+        for (int i = 0; i < texto.length(); i++) {
+            code[i] = codifica(CONJUNTO1, CONJUNTO2, texto.charAt(i));
+        }
+        texto = String.valueOf(code);
+        System.out.println(texto);
+    }
+
+    static char codifica(char conjunto[], char contonto2[], char c) {
+        final String CONHUNTO1 = String.valueOf(conjunto);
+        char codi;
+        int position = CONHUNTO1.indexOf(c);
+        if (position == -1) {
+            codi = c;
+        } else {
+            codi = contonto2[position];
+        }
+        return codi;
+    }
