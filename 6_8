@@ -1,0 +1,21 @@
+public static void main(String[] args) {
+        final String prefijo = "Cucu";
+        final String sufijo = "chaschas.";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Escriba una frase: ");
+        String entrada = sc.nextLine();
+        boolean idiomaCucu = false;
+           if (entrada.startsWith(prefijo)) {
+                idiomaCucu = true;
+                entrada = entrada.substring(prefijo.length());
+            } else if (entrada.endsWith(sufijo)) {
+                idiomaCucu = true;
+                entrada = entrada.substring(0, entrada.length() - sufijo.length());
+            }
+            if (idiomaCucu) {
+                entrada = entrada.strip();
+                System.out.println(entrada);
+            } else {
+                System.out.println("No está escrito en el idioma de Cuculandia");
+            }
+    }
