@@ -1,7 +1,7 @@
     public static void main(String[] args) {
-     Scanner sc = new Scanner (System.in);
-     String frase, palabra;
-     int veces = 0, pos;
+        Scanner sc = new Scanner(System.in);
+        String frase, palabra;
+        int veces = 0, pos;
         System.out.println("Introduzca una frase: ");
         frase = sc.nextLine();
         System.out.println("Introduce una palabra: ");
@@ -12,7 +12,9 @@
             pos = frase.indexOf(palabra, pos + 1);
         }
         if (veces == 0) {
+            System.out.println("No he encontrado la palabra " + palabra);
+        } else {
             System.out.println("\"" + palabra + "\" esta " + veces + " veces.");
         }
-     
+
     }
