@@ -1,0 +1,62 @@
+ public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String jugadorA = palabraSecreta();
+        char[] guiones = guionizando(jugadorA);
+        boolean gameOver = false;
+        int vidas = 7;
+
+        do {
+            System.out.print("Tiemes" + vidas + "vidas");
+            System.out.println(guiones);
+            System.out.print("JugadorB, introduzca una letra: ");
+            char jugB = sc.next().charAt(0);
+            boolean acierto = false;
+
+            for (int i = 0; i < jugadorA.length(); i++) {
+                if (jugadorA.charAt(i) == jugB) {
+                    guiones[i] = jugB;
+                    acierto = true;
+                }
+            }
+            if (!acierto) {
+                System.out.print("Esa letra no existe.");
+                vidas--;
+                if (vidas == 0) {
+                    System.out.println("¡¡¡¡¡¡¡ GAME OVER !!!!!!!");
+                    gameOver = true;
+                }
+            } else {
+                boolean winner = !quedanGuines(guiones);
+                if (winner) {
+                    System.out.print("¡¡¡¡¡¡¡ YOU WIN !!!!!!!");
+                    gameOver = true
+                }
+            }
+
+        } while (!gameOver);
+    }
+
+    static String palabraSecreta() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Jugador A, introduce una palabra: ");
+        String jugadorA = sc.next();
+        return jugadorA;
+    }
+
+    private static char[] guionizando(String jugadorA) {
+        int numLetras = jugadorA.length();
+        char[] guiones = new char[numLetras];
+        for (int i = 0; i < guiones.length; i++) {
+            guiones[i] = '_';
+        }
+        return guiones;
+    }
+
+    private static boolean quedanGuines(char[] posiciones) {
+        for (char letra : posiciones) {
+            if (letra == '_') {
+
+            }
+        }
+        return false;
+    }
